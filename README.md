@@ -12,4 +12,13 @@ Welcome to GlassCanvas. To get setup, please follow the instructions below:
   - npm install papaparse
  6. Finally, run: "npm start" to see the website!
  
+ Note: This website mostly focuses on emerging artists and masters. You can try to input some of the following names to see their price ranges.
+ 
+ Claude Monet
+ Matthew Wong
+ George Condo
+ Zeng Fanzhi
+ Pablo Picasso
+ 
+ 
  Please direct all questions to: bzchen@unix.andrew.cmu.edu
