@@ -5,7 +5,7 @@ import "./header.css"
 export default function header(){
     return(
         <div className = "header">
-            hello!
+            <img id = "logo" src={require("../images/logo.png")}></img>
         </div>
     )
 }
