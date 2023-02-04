@@ -2,7 +2,7 @@
     position: relative;
     width: 100%;
     height: 700px;
-    padding-top: 5%;
+    padding-top: 10%;
     background-image: url("../images/estimate.png");
     background-size:cover;
     background-position: top center;
@@ -19,9 +19,84 @@
 .mediums{
     font-weight:700;
     font-size:20px;
+    color:#ffede3bd;
 }
 
 #submit-button{
     background-color:#09102a9b;
-    border-radius: 5px;
+    border:none;
+    border-radius: 30px;
+    color:#ffede3;
+    padding:15px 30px;
+    display:block;
+    margin:auto;
+    font-weight:600;
+    font-size:20px;
+    text-align:center;
+    cursor:pointer;
+    margin-top:1em;
+}
+
+.size{
+    width:fit-content;
+    display:block;
+    margin:auto;
+}
+
+input{
+    background-color:rgba(0, 0, 0, 0);
+    border:none;
+    border-bottom:2px solid #FFEDE3;
+    width: 200px;
+    display:inline-block;
+    padding:3px 5px;
+    margin:0 10px;
+}
+
+input, select, textarea{
+    color:#FFEDE3;
+    font-weight:400;
+    font-size:20px;
+    text-align:center;
+}
+
+#artist-name{
+    width: 500px;
+    display:block;
+    margin:auto;
+}
+
+input::placeholder{
+    font-weight:500;
+    font-size:20px;
+    text-align:center;
+    color:#ffede3bd;
+}
+
+#artist-name::placeholder{
+    font-weight:600;
+    font-size:24px;
+    text-align:center;
+    color:#ffede3bd;
+}
+
+button{
+    display:inline-block;
+    background-color:#00000000;
+    padding:10px 10px;
+    border-radius:20px;
+    border:1px solid #ffede3bd;
+    color:#FFEDE3;
+    margin:0 5px;
+    font-size:17px;
+    cursor:pointer;
+}
+
+.mediums{
+    width:fit-content;
+    display:block;
+    margin:auto;
+}
+.selectedButton{
+    background-color:#ffffffa3;
 }
