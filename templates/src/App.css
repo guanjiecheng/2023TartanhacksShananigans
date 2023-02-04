@@ -56,7 +56,10 @@ p{
 }
 
 #dataVisIntro{
-    color: #93898B
+    color: #693249;
+    background:#FFEDE3;
+    margin:0;
+    padding:5%;
 
 }
 
