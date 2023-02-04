@@ -5,6 +5,9 @@ import './App.css';
 import '/'
 import Header from "./components/header"
 import Estimator from "./components/estimator"
+import BarChart from "./components/datavis"
+
+
 function App() {
    // new line start
   const [profileData, setProfileData] = useState(null)
@@ -28,6 +31,7 @@ function App() {
       <header className="App-header">
         <Header/>
         <Estimator/>
+        <BarChart/>
         {/* new line start*/}
         <p>To get your profile details: </p>
         {profileData && <div>
