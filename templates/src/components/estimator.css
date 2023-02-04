@@ -1,0 +1,27 @@
+.estimator{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding-top: 5%;
+    background-image: url("../images/header.png");
+    background-size:contain;
+    background-position: top center;
+    background-repeat: no-repeat;
+    top:0;
+}
+
+#artist-name{
+    font-weight:600;
+    font-size:24px;
+    text-align:center;
+}
+
+.mediums{
+    font-weight:700;
+    font-size:20px;
+}
+
+#submit-button{
+    background-color:#09102a9b;
+    border-radius: 5px;
+}
