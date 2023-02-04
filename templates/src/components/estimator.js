@@ -3,6 +3,8 @@ import "../App.css"
 import "./estimator.css"
 import MediumSelect from "./mediumSelect";
 import ResultShow from "./results";
+import Papa from "papaparse";
+import ArtData from "./artdata.csv";
 
 export default function Estimator(){
     const mediums = ['Oil on Canvas','Work on Paper', 'Print', 'Watercolor', 'Mixed Media', 'Acrylic', 'Graphite/Pencil', 'Lithograph','Scroll', 'Others'];
@@ -38,18 +40,37 @@ export default function Estimator(){
         setHeight(document.getElementById('height-input').value);
         setEstimateClicked(true);
     }
-    console.log(estimateClicked)
     // modal
 
     useEffect(()=>{
         setShowModal(estimateClicked);
-        console.log(showModal);
     }, [estimateClicked])
 
     const modalOpenClose = (open) => {
         setShowModal(open);
         if(!open){setEstimateClicked(false);}
     }
+
+    const [parsedData, setParsedData] = useState([]);
+         
+    // Event listener on reader when the file
+    // loads, we parse it and set the data.
+        // Passing file data (event.target.files[0]) to parse using Papa.parse
+    useEffect(()=>{
+        const fetchData = async () => {
+            Papa.parse(ArtData, {
+                header: true,
+                download: true,
+                delimiter: ",",
+                complete: ((result) => {
+                    setParsedData((result.data.map(d => (
+                        {artist: d.Artist,
+                        price: d.Price}))))
+                    
+                })
+        })}
+        fetchData();
+    }, [])
 
     return ( <div className = "estimator" id="estimator">
             <h3>SEE FUTURE TRENDS... BEFORE THEY OCCUR</h3>
@@ -68,7 +89,7 @@ export default function Estimator(){
                 <input type = "search" id = "height-input" placeholder="HEIGHT"></input><br></br><br></br>
             </div>
             <button id="submit-button" type = "button" onClick = {submitButton}>ESTIMATE</button>
-            {showModal && <ResultShow artist={artist} width={width} height={height} medium={medium} showModal={showModal} modalHandler={modalOpenClose}/>}
+            {showModal && <ResultShow artist={artist} width={width} height={height} medium={medium} showModal={showModal} modalHandler={modalOpenClose} parsedData={parsedData}/>}
         </div>
     )
 }
