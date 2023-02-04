@@ -25,6 +25,13 @@ export default function Estimator(){
         else{setSelectedMed(null);}
     }
 
+    function submitButton(){
+        var artist = document.getElementById('artist-name').value
+        var width = document.getElementById('width-input').value
+        var medium = selectedMed
+        var height = document.getElementById('height-input').value
+    }
+
     return(
         <div className = "estimator">
             <h3>SEE FUTURE TRENDS... BEFORE THEY OCCUR</h3>
@@ -42,7 +49,7 @@ export default function Estimator(){
                 <input type = "search" id = "width-input" placeholder="WIDTH"></input>
                 <input type = "search" id = "height-input" placeholder="HEIGHT"></input><br></br><br></br>
             </div>
-            <button id="submit-button">ESTIMATE</button>
+            <button id="submit-button" type = "button" onClick = {submitButton}>ESTIMATE</button>
         </div>
     )
 }
