@@ -1,13 +1,16 @@
 .header{
     position: relative;
     width: 100%;
-    height: 700px;
+    height: 750px;
+    padding:0;
+    margin:0;
     padding-top: 5%;
     background-image: url("../images/header.png");
     background-size:cover;
     background-position: top center;
     background-repeat: no-repeat;
     top:0;
+    box-sizing:border-box;
 }
 #logo{
     display: block;
@@ -16,4 +19,10 @@
 }
 .heading{
     padding:7% 20%;
+}
+
+@media (max-width: 720px) {
+    .heading{
+        padding-top:25%;
+    }
 }

@@ -25,11 +25,18 @@ export default function Estimator(){
         else{setSelectedMed(null);}
     }
 
+    function submitButton(){
+        let artistName = document.getElementById('artist-name').value;
+        let width = document.getElementById('width-input').value;
+        let height = document.getElementById('height-input').value;
+        console.log(artistName, width, height);
+    }
+
     return(
         <div className = "estimator">
             <h3>SEE FUTURE TRENDS... BEFORE THEY OCCUR</h3>
             <input type = "search" id = "artist-name" placeholder="SEARCH BY ARTIST NAME" required></input>
-            <div class="medium">
+            <div className="medium">
                 <h5>MEDIUM</h5>
                 <div className="mediums">
                     {mediumIds.map((medium, idx) => {
@@ -42,7 +49,7 @@ export default function Estimator(){
                 <input type = "search" id = "width-input" placeholder="WIDTH"></input>
                 <input type = "search" id = "height-input" placeholder="HEIGHT"></input><br></br><br></br>
             </div>
-            <button id="submit-button">ESTIMATE</button>
+            <button id="submit-button" onClick={submitButton}>ESTIMATE</button>
         </div>
     )
 }

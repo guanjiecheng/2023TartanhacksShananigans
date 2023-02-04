@@ -1,13 +1,16 @@
 .estimator{
     position: relative;
     width: 100%;
-    height: 700px;
-    padding-top: 10%;
+    height: 750px;
+    margin:0;
+    padding:0;
+    padding-top: 5%;
     background-image: url("../images/estimate.png");
     background-size:cover;
     background-position: top center;
     background-repeat: no-repeat;
     top:0;
+    box-sizing:border-box;
 }
 
 #artist-name{
@@ -47,14 +50,10 @@ input{
     background-color:rgba(0, 0, 0, 0);
     border:none;
     border-bottom:2px solid #FFEDE3;
-    width: 200px;
+    width: 45%;
     display:inline-block;
     padding:3px 5px;
     margin:0 10px;
-}
-
-input:focus{
-    outline:none;
 }
 
 
@@ -72,7 +71,7 @@ input, select, textarea{
 }
 .medium{
     background-color:#ffede339;
-    margin:2% 20%;
+    margin:4% 20%;
     padding: 1%;
     border-radius:20px;
 }
@@ -88,6 +87,14 @@ input::placeholder{
     font-size:24px;
     text-align:center;
     color:#ffede3bd;
+}
+
+input:focus{
+    outline:none;
+}
+
+input:autofill{
+    background-color:#00000000 !important;
 }
 
 button{

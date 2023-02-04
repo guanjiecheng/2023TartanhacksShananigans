@@ -31,7 +31,7 @@ function App() {
       <header className="App-header">
         <Header/>
         <Estimator/>
-        <BarChart/>
+        {/* <BarChart/> */}
         {/* new line start*/}
         <p>To get your profile details: </p>
         {profileData && <div>
