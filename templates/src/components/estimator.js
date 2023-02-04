@@ -8,10 +8,17 @@ export default function estimator(){
         <div className = "estimator">
             <h3>SEE FUTURE TRENDS... BEFORE THEY OCCUR</h3>
             <input type = "search" id = "artist-name"></input>
-            <h5>MEDIUM</h5>
             <div>
-
+                <h5>MEDIUM</h5>
             </div>
+            <div>
+                <h5>SIZE</h5>
+                <input type = "search" id = "width-input"></input>
+                <input type = "search" id = "height-input"></input><br></br><br></br>
+                <label for = "width-input">WIDTH</label>
+                <label for = "height-input">HEIGHT</label>
+            </div>
+            <button>ESTIMATE</button>
         </div>
     )
 }
