@@ -4,7 +4,7 @@ import "./estimator.css"
 import MediumSelect from "./mediumSelect";
 
 export default function Estimator(){
-    const mediums = ['Oil on Canvas','Acrylic', 'Chalk', 'Watercolor', 'Mixed Media', 'Etching', 'Graphite', 'Digital','Photography', 'Others'];
+    const mediums = ['Oil on Canvas','Work on Paper', 'Print', 'Watercolor', 'Mixed Media', 'Acrylic', 'Graphite/Pencil', 'Lithograph','Scroll', 'Others'];
     
     function getIds(){
         let medium = [];
@@ -15,20 +15,21 @@ export default function Estimator(){
     }
 
     const [mediumIds, setMediumIds] = useState(getIds());
+    const [selectedMed, setSelectedMed] = useState(null);
 
     const mediumSelected = (idx, selected) => {
         let newMediums = getIds();
         newMediums[idx].selected = selected;
-        console.log(newMediums);
         setMediumIds(newMediums);
-
+        if(selected){setSelectedMed(newMediums[idx].medium);}
+        else{setSelectedMed(null);}
     }
 
     return(
         <div className = "estimator">
             <h3>SEE FUTURE TRENDS... BEFORE THEY OCCUR</h3>
-            <input type = "search" id = "artist-name" placeholder="SEARCH BY ARTIST NAME"></input>
-            <div>
+            <input type = "search" id = "artist-name" placeholder="SEARCH BY ARTIST NAME" required></input>
+            <div class="medium">
                 <h5>MEDIUM</h5>
                 <div className="mediums">
                     {mediumIds.map((medium, idx) => {

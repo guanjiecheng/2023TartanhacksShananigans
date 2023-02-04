@@ -65,7 +65,12 @@ input, select, textarea{
     display:block;
     margin:auto;
 }
-
+.medium{
+    background-color:#ffede339;
+    margin:2% 20%;
+    padding: 1%;
+    border-radius:20px;
+}
 input::placeholder{
     font-weight:500;
     font-size:20px;
@@ -87,7 +92,7 @@ button{
     border-radius:20px;
     border:1px solid #ffede3bd;
     color:#FFEDE3;
-    margin:0 5px;
+    margin:5px;
     font-size:17px;
     cursor:pointer;
 }
@@ -96,7 +101,10 @@ button{
     width:fit-content;
     display:block;
     margin:auto;
+    margin-bottom:1%;
 }
 .selectedButton{
-    background-color:#ffffffa3;
+    background-color:#ffede38e;
+    color:#7243c5;
+    font-weight:500;
 }
