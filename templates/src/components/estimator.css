@@ -1,10 +1,10 @@
 .estimator{
     position: relative;
     width: 100%;
-    height: auto;
+    height: 700px;
     padding-top: 5%;
-    background-image: url("../images/header.png");
-    background-size:contain;
+    background-image: url("../images/estimate.png");
+    background-size:cover;
     background-position: top center;
     background-repeat: no-repeat;
     top:0;

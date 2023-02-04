@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import './App.css';
 import '/'
 import Header from "./components/header"
-
+import Estimator from "./components/estimator"
 function App() {
    // new line start
   const [profileData, setProfileData] = useState(null)
@@ -27,6 +27,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Header/>
+        <Estimator/>
         {/* new line start*/}
         <p>To get your profile details: </p>
         {profileData && <div>
