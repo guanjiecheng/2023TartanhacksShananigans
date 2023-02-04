@@ -5,6 +5,7 @@ import './App.css';
 import '/'
 import Header from "./components/header"
 import Estimator from "./components/estimator"
+import Vis from "./components/datavis"
 function App() {
    // new line start
   const [profileData, setProfileData] = useState(null)
@@ -28,14 +29,7 @@ function App() {
       <header className="App-header">
         <Header/>
         <Estimator/>
-        {/* new line start*/}
-        <p>To get your profile details: </p>
-        {profileData && <div>
-              <p>Profile name: {profileData.name}</p>
-              <p>About me: {profileData.about}</p>
-            </div>
-        }
-         {/* end of new line */}
+        <Vis/>
       </header>
     </div>
   );

@@ -36,7 +36,7 @@ export default function Estimator(){
         <div className = "estimator">
             <h3>SEE FUTURE TRENDS... BEFORE THEY OCCUR</h3>
             <input type = "search" id = "artist-name" placeholder="SEARCH BY ARTIST NAME" required></input>
-            <div class="medium">
+            <div className="medium">
                 <h5>MEDIUM</h5>
                 <div className="mediums">
                     {mediumIds.map((medium, idx) => {
