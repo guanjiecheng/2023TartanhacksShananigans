@@ -61,3 +61,11 @@ h2{
     display:block;
     margin:auto;
 }
+
+
+@media (max-width: 720px) {
+    .container{
+        width: 350px;
+        height: 450px;
+     }
+}
