@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 // import axios from "axios";
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -21,8 +21,6 @@ function App() {
             })
     );
   })
-
-
   return (
     <div className="App">
       <header className="App-header">
