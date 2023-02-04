@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import "../App.css"
 import "./estimator.css"
 import MediumSelect from "./mediumSelect";
@@ -26,14 +26,13 @@ export default function Estimator(){
     }
 
     function submitButton(){
-        let artistName = document.getElementById('artist-name').value;
-        let width = document.getElementById('width-input').value;
-        let height = document.getElementById('height-input').value;
-        console.log(artistName, width, height);
+        var artist = document.getElementById('artist-name').value
+        var width = document.getElementById('width-input').value
+        var medium = selectedMed
+        var height = document.getElementById('height-input').value
     }
 
-    return(
-        <div className = "estimator">
+    return ( <div className = "estimator">
             <h3>SEE FUTURE TRENDS... BEFORE THEY OCCUR</h3>
             <input type = "search" id = "artist-name" placeholder="SEARCH BY ARTIST NAME" required></input>
             <div className="medium">
@@ -49,7 +48,7 @@ export default function Estimator(){
                 <input type = "search" id = "width-input" placeholder="WIDTH"></input>
                 <input type = "search" id = "height-input" placeholder="HEIGHT"></input><br></br><br></br>
             </div>
-            <button id="submit-button" onClick={submitButton}>ESTIMATE</button>
+            <button id="submit-button" type = "button" onClick = {submitButton}>ESTIMATE</button>
         </div>
     )
 }

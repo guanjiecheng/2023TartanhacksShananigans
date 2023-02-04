@@ -56,6 +56,10 @@ input{
     margin:0 10px;
 }
 
+input:focus{
+    outline: none;
+}
+
 
 input, select, textarea{
     color:#FFEDE3;
