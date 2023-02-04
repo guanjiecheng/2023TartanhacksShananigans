@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "../App.css"
 import "./estimator.css"
 import MediumSelect from "./mediumSelect";
+import ResultShow from "./results";
 
 export default function Estimator(){
     const mediums = ['Oil on Canvas','Work on Paper', 'Print', 'Watercolor', 'Mixed Media', 'Acrylic', 'Graphite/Pencil', 'Lithograph','Scroll', 'Others'];
@@ -15,24 +16,42 @@ export default function Estimator(){
     }
 
     const [mediumIds, setMediumIds] = useState(getIds());
-    const [selectedMed, setSelectedMed] = useState(null);
+    const[artist, setArtist] = useState(null);
+    const[width, setWidth] = useState(null);
+    const[height, setHeight] = useState(null);
+    const[medium, setMedium] = useState(null);
+    const[estimateClicked, setEstimateClicked] = useState(false);
+    const [showModal, setShowModal] = useState(false);
 
     const mediumSelected = (idx, selected) => {
         let newMediums = getIds();
         newMediums[idx].selected = selected;
         setMediumIds(newMediums);
-        if(selected){setSelectedMed(newMediums[idx].medium);}
-        else{setSelectedMed(null);}
+        if(selected){setMedium(newMediums[idx].medium);}
+        else{setMedium(null);}
     }
 
+    // const [submitted, SetSubmitted] = useState(false);
     function submitButton(){
-        var artist = document.getElementById('artist-name').value
-        var width = document.getElementById('width-input').value
-        var medium = selectedMed
-        var height = document.getElementById('height-input').value
+        setArtist(document.getElementById('artist-name').value);
+        setWidth(document.getElementById('width-input').value);
+        setHeight(document.getElementById('height-input').value);
+        setEstimateClicked(true);
+    }
+    console.log(estimateClicked)
+    // modal
+
+    useEffect(()=>{
+        setShowModal(estimateClicked);
+        console.log(showModal);
+    }, [estimateClicked])
+
+    const modalOpenClose = (open) => {
+        setShowModal(open);
+        if(!open){setEstimateClicked(false);}
     }
 
-    return ( <div className = "estimator">
+    return ( <div className = "estimator" id="estimator">
             <h3>SEE FUTURE TRENDS... BEFORE THEY OCCUR</h3>
             <input type = "search" id = "artist-name" placeholder="SEARCH BY ARTIST NAME" required></input>
             <div className="medium">
@@ -49,6 +68,7 @@ export default function Estimator(){
                 <input type = "search" id = "height-input" placeholder="HEIGHT"></input><br></br><br></br>
             </div>
             <button id="submit-button" type = "button" onClick = {submitButton}>ESTIMATE</button>
+            {showModal && <ResultShow artist={artist} width={width} height={height} medium={medium} showModal={showModal} modalHandler={modalOpenClose}/>}
         </div>
     )
 }
